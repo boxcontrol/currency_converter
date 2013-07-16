@@ -18,13 +18,13 @@ b = b.upper()
 
 c = float(raw_input('Enter value to convert?'))
 
-url = ('http://rate-exchange.appspot.com/currency?from=%s&to=%s') % (a, b)
+url = ('http://rate-exchange.appspot.com/currency?from=%s&to=%s&q=1') % (a, b)
 print url
 
 r = requests.get(url)
-print r.json()['rate']
+print r.json()['v']
 
-print c*r.json()['rate']
+print c*r.json()['v']
 
 urlalt = ('http://themoneyconverter.com/%s/%s.aspx') % (a, b)
 
